@@ -1,0 +1,201 @@
+# Quality First Coding Competition
+
+A programming competition with a twist!
+
+Traditional programming contests focus on developing accurate solutions quickly.
+The Quality First Coding Competition (QFCC) focuses on developing accurate solutions **well**.
+Of course, measuring the "quality" of a piece of code is impossible and subjective,
+so this contest uses number of compiles/runs as a proxy for quality.
+
+Today, more than ever, it is important for developers to be able to recognize, develop, and appreciate high-quality code.
+Even code produced by AI must be reviewed and revised for quality.
+
+This iteration of the this contest was inspired by
+[Dr. John Dalbey's "Quality First Programming Contest"](https://users.csc.calpoly.edu/~jdalbey/Contest/).
+Which was, in-turn, influenced by
+Dr. James Bowring's [A New Paradigm for Programming Competitions](https://dl.acm.org/doi/abs/10.1145/1352322.1352166).
+
+The information in this document applies to this variation of the contest.
+Specific events may vary their rules.
+
+## Repository
+
+This repository provides instructions, tools, and materials for running a QFCC.
+All material is licensed under the [MIT License](LICENSE).
+
+## Overview
+
+In this contest contestants must create a program to solve a given problem specification.
+Contestants are ranked first by the number of attempts they take to produce a correct solution,
+and then by how long it took to produce that solution.
+Incorrect solution (solutions that do not produce the correct output) are not considered valid.
+
+This competition differs from more traditional competitions in the following ways:
+
+ - **Problem Difficulty is Reduced** --
+     The problem contestants must solve is considerably easier than traditional programming contests.
+     We plan for anyone with roughly one year of programming experience/knowledge to be able to compete without issue.
+     Knowledge of common data structures would be useful, but not necessary.
+ - **Accuracy is Emphasized over Speed** --
+     In traditional programming contests, speed is the most important factor.
+     Here, speed is only used to break ties.
+ - **Execution Time is Ignored** --
+     Many programming contests either rank solutions based on execution time or require a maximum execution time.
+     In this contest, execution time is not considered.
+ - **Better Feedback** --
+     In this contest you will get a full copy of your output, instead of just information on whether or not is passed.
+
+## Contest Procedure
+
+Below is the general outline for a competition.
+
+ 1. Arrive and Check-In
+   - Contestants are individually timed, so do not worry if it takes some time to get started.
+     - Leave your email address so you can be contacted if you win and have to leave early.
+   - Contestants can generally arrive up to one hour after the contest starts and still compete.
+ 2. Check-In Phone
+   - Be sure to put your phone on silent.
+ 3. Give Laptop to Judges to Prepare
+   - Judges will load the [contest image/OS](#contest-image) onto your laptop.
+     - No storage will be used/modified/deleted in this process (your files are safe).
+     - Rebooting the laptop will return it to normal.
+ 4. Receive Problem Specification
+   - Once you have your configured laptop and seat, judges will hand you:
+     - a problem specification,
+     - a piece of scratch paper,
+     - and a USB stick to use to transfer solutions.
+   - Time starts when you get the problem specification.
+   - You may request additional scratch paper at any time.
+ 5. Work on Your Solution
+   - We recommend starting on paper before typing your solution.
+ 6. Submit Solution
+   - Once you think you have a working solution, copy your solution to the provided USB stick and place it in the judging queue.
+     - Your file should be named [according to the language you are using](#language-support).
+   - You may submit as many times as you want.
+ 7. Await Judging
+   - If you have a correct solution:
+     - Then, judges will record your success and current rank on the board.
+       - Continue to step 8.
+     - Else, judges will copy the output of your run onto the same USB stick and place it in the output queue.
+       - Retrieve your USB and go to step 5.
+ 8. Wait for Final Rankings
+   - Once your score is recorded, you can leave the contest room.
+     - Hopefully their will be food waiting for your in the designated waiting area.
+   - When final ranks are decided, the judges will let everyone know.
+     - You will be emailed if you win and have to leave early.
+
+### Withdrawing
+
+You are free to withdraw at any time.
+Just let the judges know and leave the room.
+
+### Asking for Clarification
+
+If you have a clarification question, you may submit it in writing to the judges.
+If this is a question that the judges can answer,
+the judges will write the answer on the board for all to see.
+
+### Resources
+
+Things to bring:
+ - Yourself
+ - Laptop with USB Ports
+   - If you don't have one, the event hosts may be able to supply one (but supplies will likely be limited).
+ - Pen/Pencil
+
+Things that will be provided:
+ - USB with Bootable Linux Image
+ - USB to transfer Solutions
+ - Paper
+ - Food
+
+### Phone Check-In
+
+Phones are not allowed during the competition.
+Using a phone may be subject to immediate disqualification.
+(You are not required to check-in your phone, but just touching your phone may be grounds for disqualification.)
+
+Before you are given the problem,
+you may give your phone to the judge (if you have one).
+A judge will give you a slip so that you can retrieve your phone at the end of the event.
+
+We recommend that you put your phone on silent
+(so the judges don't have to fumble with it during the competition).
+If available, isolation bags may be used.
+
+### Bathroom Breaks
+
+Bathroom breaks are typically allowed under the following conditions:
+ - No provided materials (e.g., paper, USB sticks) can be taken to the bathroom.
+ - Your phone must remain checked-in while you are in the bathroom.
+ - Judges may limit the number of contestants in the bathroom at a time.
+
+### Ground for Disqualification
+
+ - Rude or Disrespectful Behavior
+ - Use of Compilers
+ - Use or Predictive Features
+   - This includes things like autocomplete (based on language syntax) or AI/LLMs.
+ - Use of Phone
+   - We recommend checking-in your phone and setting it to silent.
+ - Use of Internet
+ - Collaboration with Anyone Else
+ - Rebooting Your Machine
+   - This will cause your machine to go back to normal.
+   - If this accidentally happens, immediately leave your machine and ask a judge for help.
+ - Malicious Submission
+   - This includes submissions that are malicious,
+     attempts to bypass the intended problem,
+     or attempts to discover details about the code used to evaluate submissions.
+ - Violating the Spirit of the Contest
+   - Using a tool or documentation accidentally left on the machine.
+     - Discretion is given to the judges on whether or not you violated the spirit of the contest,
+       but there is not really a valid reason for exploring the filesystem.
+
+## Contest Image
+
+To ensure an even playing field, all contestants will use the same [Operating System image](https://en.wikipedia.org/wiki/System_image).
+This image contains a basic UNIX environment, text editors, and a simple GUI.
+However, it is meant to not contain anything that may give a contestant or language an advantage,
+such as compilers, predictive autocomplete, documentation, or internet access.
+
+We also appreciate PRs that add editor or language support.
+
+### Text Editors
+
+Text editors are the recommended way to write down your code.
+Because of the nature of the contest (no compiling or predictive features),
+IDEs are generally disallowed.
+Note that only editors with autocomplete based on knowledge of a language's syntax are disallowed.
+Editors that autocomplete based on the tokens in the current file/directory are allowed.
+
+The following text editors are present in the image:
+ - [Emacs](https://en.wikipedia.org/wiki/Emacs)
+ - [gedit](https://en.wikipedia.org/wiki/Gedit)
+ - [GVim](https://en.wikipedia.org/wiki/Vim_(text_editor)#Graphical_user_interface)
+ - [Nano](https://en.wikipedia.org/wiki/GNU_nano)
+ - [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor))
+
+If you are new to text editors (e.g., you have only used IDEs),
+then we recommend a simple GUI-based one like gedit.
+
+### Language Support
+
+All submissions should be contained in a single file with the `solution` basename.
+The extension that should be used as well as how the solution will be run is in the following table:
+
+| Language | Extension | Invocation |
+|----------|-----------|------------|
+| C        | `.c`      | `gcc solution.c &> compile.log && ./a.out &> out.log` |
+| C++      | `.cc`     | `g++ solution.cc &> compile.log && ./a.out &> out.log` |
+| Java     | `.java`   | `javac solution.java &> compile.log && java solution &> out.log` |
+| Python   | `.py`     | `python3 solution.py &> out.log` |
+| Ruby     | `.rb`     | `ruby solution.rb &> out.log` |
+
+If you want to use a language not listed here,
+be sure to contact the contest hosts well before the contest.
+Most text-based languages with CLI support should be admissible.
+
+## Acknowledgements
+
+A special thanks to [Dr. John Dalbey](https://users.csc.calpoly.edu/~jdalbey) for providing the inspiration and initial materials for this event.

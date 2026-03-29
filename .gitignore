@@ -1,0 +1,28 @@
+# Editor Files
+.DS_Store
+*.swp
+.idea
+
+# Language Dirents
+.ipynb_checkpoints
+node_modules/
+venv/
+*.pyc
+__pycache__/
+
+# Common Temp Dirents
+old/
+temp/
+out*/
+/test-*
+test/
+/test*.*
+.secrets
+
+# Build
+/bin/
+/build/
+/dist/
+*.egg-info
+/html/
+/.mypy_*/
