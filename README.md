@@ -36,7 +36,7 @@ This competition differs from more traditional competitions in the following way
  - **Problem Difficulty is Reduced** --
      The problem contestants must solve is considerably easier than traditional programming contests.
      We plan for anyone with roughly one year of programming experience/knowledge to be able to compete without issue.
-     Knowledge of common data structures is be useful, but not necessary.
+     Knowledge of common data structures is useful, but not necessary.
  - **Accuracy is Emphasized over Speed** --
      In traditional programming contests, speed is the most important factor.
      Here, speed is only used to break ties.
