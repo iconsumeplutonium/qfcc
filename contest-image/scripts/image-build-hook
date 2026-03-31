@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# A hook called in the chroot phase of the image building process.
+
+readonly WORK_DIR='/work'
+
+readonly PACKAGES_DIR="${WORK_DIR}/packages"
+readonly REMOVE_PACKAGES_PATH="${PACKAGES_DIR}/remove.txt"
+
+function remove_packages() {
+    echo "Removing Packages"
+
+    cat "${REMOVE_PACKAGES_PATH}" | xargs apt remove -y
+
+    apt autoremove -y
+    apt autoclean -y
+}
+
+function main() {
+    trap exit SIGINT
+    set -e
+
+    # Remove Unwanted Packages
+    remove_packages
+
+    # Remove Work Directory
+    rm -rf "${WORK_DIR}"
+
+    return 0
+}
+
+[[ "${BASH_SOURCE[0]}" == "${0}" ]] && main "$@"

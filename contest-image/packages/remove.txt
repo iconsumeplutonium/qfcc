@@ -1,0 +1,9 @@
+apparmor
+aspell
+aspell-en
+cron
+dictionaries-common
+enchant-2
+hunspell-en-us
+mariadb-common
+mysql-common

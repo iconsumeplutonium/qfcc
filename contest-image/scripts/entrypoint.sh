@@ -1,7 +1,7 @@
 #!/bin/bash
 
 readonly WORK_DIR='/work'
-readonly BUILD_DIR="${WORK_DIR}/build"
+readonly BUILD_DIR="/build"
 readonly OUT_DIR='/out'
 
 function main() {
