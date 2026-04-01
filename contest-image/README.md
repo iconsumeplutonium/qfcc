@@ -8,6 +8,11 @@ Th contest image is based on [Debian](https://en.wikipedia.org/wiki/Debian),
 and uses the [Live Build](https://live-team.pages.debian.net/live-manual/html/live-manual/index.en.html)
 tools to create a custom image.
 
+## Using the Image
+
+ - Username: `qfcc`
+ - Password: `qfcc`
+
 ## Building the Image
 
 We use [Live Build](https://live-team.pages.debian.net/live-manual/html/live-manual/index.en.html) to build our image,

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# A hook called when the image is booting, before a user can assume control.
+
+function setup_users() {
+    echo "Setting Up Users"
+
+    echo 'qfcc:qfcc' | chpasswd
+}
+
+function main() {
+    trap exit SIGINT
+    set -e
+
+    # Setup Users
+    setup_users
+
+    return 0
+}
+
+[[ "${BASH_SOURCE[0]}" == "${0}" ]] && main "$@"

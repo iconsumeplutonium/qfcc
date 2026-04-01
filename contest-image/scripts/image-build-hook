@@ -10,10 +10,10 @@ readonly REMOVE_PACKAGES_PATH="${PACKAGES_DIR}/remove.txt"
 function remove_packages() {
     echo "Removing Packages"
 
-    cat "${REMOVE_PACKAGES_PATH}" | xargs apt remove -y
+    cat "${REMOVE_PACKAGES_PATH}" | xargs apt remove --purge --yes
 
-    apt autoremove -y
-    apt autoclean -y
+    apt autoremove --yes
+    apt autoclean --yes
 }
 
 function main() {
@@ -24,6 +24,7 @@ function main() {
     remove_packages
 
     # Remove Work Directory
+    echo "Removing Work Directory"
     rm -rf "${WORK_DIR}"
 
     return 0
