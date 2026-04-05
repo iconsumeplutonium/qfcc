@@ -28,7 +28,8 @@ To run the image, we recommend using the provided script:
 ./scripts/run-docker-judge.sh <path to contestant submission directory> <path to oracle directory>
 ```
 
-This script will properly set up the required directory structure for judging.
+This script will properly set up the required directory structure for judging,
+and copy all output to the given submission directory.
 
 ### Judging Script
 

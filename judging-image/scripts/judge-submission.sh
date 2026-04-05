@@ -35,7 +35,8 @@ function check_contents() {
 
     local num_input_files=$(ls -1q "${input_dir}" | wc -l)
     if [[ ${num_input_files} -ne 1 ]] ; then
-        echo "ERROR: Expected exactly one input file, found ${num_input_files}."
+        echo "ERROR: Expected exactly one input file, found ${num_input_files}:"
+        ls -1q "${input_dir}" | sort
         exit 103
     fi
 

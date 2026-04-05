@@ -3,6 +3,7 @@
 readonly DOCKER_IMAGE_NAME='qfcc-judge'
 
 readonly TEMP_DIR='/tmp/qfcc_docker_judge'
+readonly TEMP_OUTPUT_PATH="${TEMP_DIR}/output.txt"
 
 readonly CONTAINER_BASE_DIR='/judge'
 readonly CONTAINER_INPUT_DIR="${CONTAINER_BASE_DIR}/input"
@@ -16,7 +17,6 @@ function main() {
     fi
 
     trap exit SIGINT
-    set -e
 
     local submission_dir=$1
     local base_oracle_dir=$2
@@ -39,7 +39,18 @@ function main() {
         --volume "${input_dir}:${CONTAINER_INPUT_DIR}:ro" \
         --volume "${output_dir}:${CONTAINER_OUTPUT_DIR}" \
         --volume "${oracle_dir}:${CONTAINER_ORACLE_DIR}:ro" \
-        "${DOCKER_IMAGE_NAME}"
+        "${DOCKER_IMAGE_NAME}" \
+        > "${TEMP_OUTPUT_PATH}"
+    local exit_code=$?
+
+    cp "${TEMP_OUTPUT_PATH}" "${output_dir}/output.txt"
+    cp "${output_dir}/"* "${submission_dir}/"
+
+    if [[ ${exit_code} -eq 0 ]] ; then
+        echo "Submission passed!"
+    else
+        echo "Submission failed."
+    fi
 
     return 0
 }
