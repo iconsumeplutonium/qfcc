@@ -1,5 +1,6 @@
 apparmor
 cron
+cron-daemon-common
 dselect
 info
 man-db

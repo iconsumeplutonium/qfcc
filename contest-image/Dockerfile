@@ -58,7 +58,8 @@ RUN \
 # Data Directory
 RUN \
     mkdir -p /build/config/includes.chroot/opt/qfcc \
-    && cp -r /work/data /build/config/includes.chroot/opt/qfcc/
+    && cp -r /work/data /build/config/includes.chroot/opt/qfcc/ \
+    && cp -r /work/packages/remove-force.txt /build/config/includes.chroot/opt/qfcc/data/
 
 # Shortcuts
 RUN \

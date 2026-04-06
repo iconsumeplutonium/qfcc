@@ -5,6 +5,7 @@
 readonly BASE_DIR='/opt/qfcc'
 readonly DATA_DIR="${BASE_DIR}/data"
 readonly SHORTCUTS_DIR="${DATA_DIR}/shortcuts"
+readonly FORCE_REMOVE_PACKAGES_PATH="${DATA_DIR}/remove-force.txt"
 
 function setup_users() {
     echo "Setting Up Users"
@@ -19,6 +20,31 @@ function setup_desktop() {
     echo 'XDG_DATA_DIRS=/usr/share/xfce4:/usr/local/share/:/usr/share/:/usr/share:/home/qfcc/Desktop' >> /etc/environment
 }
 
+function remove_files() {
+    rm -rf \
+        /run/live/rootfs/filesystem.squashfs/usr/share/doc/* \
+        /run/live/rootfs/filesystem.squashfs/usr/share/vim/vim90/macros/maze/* \
+        /usr/lib/live/mount/rootfs/filesystem.squashfs/usr/share/doc/* \
+        /usr/lib/live/mount/rootfs/filesystem.squashfs/usr/share/vim/vim90/macros/* \
+        /usr/share/doc/* \
+        /usr/share/vim/vim90/macros/maze/*
+}
+
+# For these packages, we will remove them only and not their dependencies.
+function force_remove_packages() {
+    echo "Force Removing Packages"
+
+    cat "${FORCE_REMOVE_PACKAGES_PATH}" | xargs dpkg --remove --force-depends --force-remove-essential
+    cat "${FORCE_REMOVE_PACKAGES_PATH}" | xargs dpkg --purge --force-depends --force-remove-essential
+}
+
+# Patch some breaks that happen when we aggressively remove some software.
+function fix_breaks() {
+    # Replace a Perl script with a link.
+    rm -f /usr/bin/x-terminal-emulator
+    ln -s /usr/bin/xfce4-terminal /usr/bin/x-terminal-emulator
+}
+
 function main() {
     trap exit SIGINT
     set -e
@@ -28,6 +54,15 @@ function main() {
 
     # Setup Desktop
     setup_desktop
+
+    # Force Remove Packages
+    force_remove_packages
+
+    # Remove Files
+    remove_files
+
+    # Fix Breaks
+    fix_breaks
 
     return 0
 }

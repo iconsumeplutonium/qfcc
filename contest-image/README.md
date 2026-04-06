@@ -91,3 +91,9 @@ qemu-system-x86_64 --enable-kvm -cpu host -boot d -m 8G -cdrom ./build/build.amd
 ## Packages
 
 The packages the image uses live in the [packages](./packages) directory.
+Note that `.list` files may contain versions, while `.txt` files can only contain names.
+
+ - [packages/base.list](packages/base.list) -- The base packages to install.
+ - [packages/editors.list](packages/editors.list) -- Editors to install.
+ - [packages/remove.txt](packages/remove.txt) -- Packages to be removed along with all their dependencies. `autoremove` and `autoclean` will be called after this.
+ - [packages/remove-force.txt](packages/remove-force.txt) -- Packages to be remove while breaking dependencies (e.g., this will leave dependencies and reverse dependencies installed).

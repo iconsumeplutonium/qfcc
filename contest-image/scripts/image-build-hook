@@ -37,6 +37,9 @@ function main() {
     # Remove Unwanted Packages
     remove_packages
 
+    # Remove Unwanted Files
+    remove_files
+
     # Remove Work Directory
     echo "Removing Work Directory"
     rm -rf "${WORK_DIR}"
