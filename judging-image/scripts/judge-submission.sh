@@ -6,7 +6,7 @@ readonly ORACLE_DIRNAME='oracle'
 
 readonly SUBMISSION_BASENAME='solution'
 
-readonly ALLOWED_EXTENSIONS=".c .py"
+readonly ALLOWED_EXTENSIONS=".c .cc .py"
 
 readonly OUTPUT_DIFF_PATH='/tmp/qfcc-output.diff'
 
@@ -136,6 +136,14 @@ function run_submission() {
         if [[ $? -ne 0 ]] ; then
             echo "C compile failed."
             exit 109
+        fi
+
+        ./a.out < "${input_path}" &> "${output_path}"
+    elif [[ "${submission_extension}" == '.cc' ]] ; then
+        g++ "${submission_path}" &> "${compile_output_path}"
+        if [[ $? -ne 0 ]] ; then
+            echo "C++ compile failed."
+            exit 110
         fi
 
         ./a.out < "${input_path}" &> "${output_path}"

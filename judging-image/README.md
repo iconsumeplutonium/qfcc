@@ -44,15 +44,13 @@ This script expects a single directory laid out as follows:
 ├── output
 └── oracle
     ├── input
-    │   ├── 001-single-line.txt
-    │   ├── 002-multiple-lines.txt
-    │   ├── 003-empty-lines.txt
-    │   └── 004-no-input.txt
+    │   ├── 001-test-case-1.txt
+    │   ├── 002-test-case-2.txt
+    │   └── 003-test-case-3.txt
     └── output
-        ├── 001-single-line.txt
-        ├── 002-multiple-lines.txt
-        ├── 003-empty-lines.txt
-        └── 004-no-input.txt
+        ├── 001-test-case-1.txt
+        ├── 002-test-case-2.txt
+        └── 003-test-case-3.txt
 ```
 
 Definitions:

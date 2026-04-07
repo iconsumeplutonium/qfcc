@@ -27,6 +27,16 @@ while (1) {
 }
 ```
 
+### C++
+
+```c++
+#include <iostream>
+#include <string>
+
+for (std::string line; std::getline(std::cin, line); ) {
+}
+```
+
 ### Python
 
 ```python
