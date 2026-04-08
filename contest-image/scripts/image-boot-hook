@@ -22,11 +22,10 @@ function setup_desktop() {
 
 function remove_files() {
     rm -rf \
-        /run/live/rootfs/filesystem.squashfs/usr/share/doc/* \
-        /run/live/rootfs/filesystem.squashfs/usr/share/vim/vim90/macros/maze/* \
-        /usr/lib/live/mount/rootfs/filesystem.squashfs/usr/share/doc/* \
-        /usr/lib/live/mount/rootfs/filesystem.squashfs/usr/share/vim/vim90/macros/* \
+        /usr/share/apport \
         /usr/share/doc/* \
+        /usr/share/gcc \
+        /usr/share/gdb \
         /usr/share/vim/vim90/macros/maze/*
 }
 
@@ -34,8 +33,13 @@ function remove_files() {
 function force_remove_packages() {
     echo "Force Removing Packages"
 
-    cat "${FORCE_REMOVE_PACKAGES_PATH}" | xargs dpkg --remove --force-depends --force-remove-essential
-    cat "${FORCE_REMOVE_PACKAGES_PATH}" | xargs dpkg --purge --force-depends --force-remove-essential
+    cat "${FORCE_REMOVE_PACKAGES_PATH}" | xargs dpkg --remove --force-depends --force-remove-essential | true
+    cat "${FORCE_REMOVE_PACKAGES_PATH}" | xargs dpkg --purge --force-depends --force-remove-essential | true
+}
+
+function unmount_live_disks() {
+    sudo umount /usr/lib/live/mount/rootfs/filesystem.squashfs
+    sudo umount /run/live/rootfs/filesystem.squashfs
 }
 
 # Patch some breaks that happen when we aggressively remove some software.
@@ -60,6 +64,9 @@ function main() {
 
     # Remove Files
     remove_files
+
+    # Unmount Live Disks
+    unmount_live_disks
 
     # Fix Breaks
     fix_breaks

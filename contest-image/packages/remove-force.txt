@@ -1,3 +1,12 @@
 cpp
 cpp-12
 gcc-12-base
+libpython3-stdlib
+libpython3.11-minimal
+libpython3.11-stdlib
+python3-minimal
+python3-six
+python3-urllib3
+python3.11-minimal
+python3.11
+python3
