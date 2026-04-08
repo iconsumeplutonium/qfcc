@@ -6,7 +6,7 @@ readonly ORACLE_DIRNAME='oracle'
 
 readonly SUBMISSION_BASENAME='solution'
 
-readonly ALLOWED_EXTENSIONS=".c .cc .java .py"
+readonly ALLOWED_EXTENSIONS=".c .cc .java .py .rb"
 
 readonly TEMP_DIR='/tmp/qfcc'
 readonly OUTPUT_DIFF_PATH="${TEMP_DIR}/output.diff"
@@ -162,6 +162,8 @@ function run_submission() {
         java -cp "${CLASSPATH_DIR}" "${submission_basename}" < "${input_path}" &> "${output_path}"
     elif [[ "${submission_extension}" == '.py' ]] ; then
         python3 "${submission_path}" < "${input_path}" &> "${output_path}"
+    elif [[ "${submission_extension}" == '.rb' ]] ; then
+        ruby "${submission_path}" < "${input_path}" &> "${output_path}"
     else
         echo "Unknown submission extension: '${submission_extension}'."
         exit 199

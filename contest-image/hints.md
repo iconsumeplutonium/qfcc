@@ -67,3 +67,10 @@ import sys
 for line in sys.stdin:
     pass
 ```
+
+### Ruby
+
+```ruby
+$stdin.each_line do |line|
+end
+```
