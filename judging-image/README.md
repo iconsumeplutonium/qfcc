@@ -1,13 +1,11 @@
-# QFCC Judging Image
+# QFCC Judging
 
-This page covers the details of the image built for judges and the judging process.
+This page covers the details of the tools built for judges and the judging process.
 
 ## Overview
 
 Submissions are judged using a script that runs inside a Docker container.
 Submissions, input, and outputs will be mounted (read-only) to the Docker container, along with a mount for output.
-
-A live image is provided so judges can optionally minimize the exposure of their host machine.
 
 ## Judging Code
 
@@ -46,11 +44,11 @@ This script expects a single directory laid out as follows:
     ├── input
     │   ├── 001-test-case-1.txt
     │   ├── 002-test-case-2.txt
-    │   └── 003-test-case-3.txt
+    │   └── ...
     └── output
         ├── 001-test-case-1.txt
         ├── 002-test-case-2.txt
-        └── 003-test-case-3.txt
+        └── ...
 ```
 
 Definitions:
@@ -61,12 +59,11 @@ Definitions:
 
 ## Judging Procedure
 
- - (Optional) Boot into the judging image.
-   - Since only Docker is required to run the judging script, running from your normal machine can work.
-     However, this exposes a slightly larger security risk.
+ - Prep your machine.
+   - Ensure that the Docker image is built.
  - Receive USB
  - Record Contestant and Attempt Time
- - Plug in and Mount
+ - Plug in USB and Mount
  - Run Judging Script
  - If successful:
    - Then, record score and keep USB.
@@ -77,12 +74,23 @@ Be sure to check their previous submissions as well.
 
 ## Preparations
 
-TODO
+### USB Drives
 
-USBs
- - Need to booting machines and transfer solutions.
- - Booting USBs should stay with judges.
- - Transfer USBs should be marked and signed and dated (on tape).
+USB drives will be used for two different activities during the contest:
+booting contest-ready machines and transferring submissions from the contestants to the judges.
+
+#### Bootable USBs
+
+Prepare a few USBs that can boot the [contest machine image](../contest-image).
+Once booted, the USB can be removed from the machine, so you don't need too many of these.
+
+#### Submission Transder USBs
+
+Each contestant should have a USB drive that they can use to submit attempts.
+Each USB should be numbered, dated, and signed by a judge to ensure there is no funny business.
+Any contestant found using any USB but their own should be disqualified.
+
+We recommend formatting USBs as [FAT32 (vFAT)](https://en.wikipedia.org/wiki/File_Allocation_Table#FAT32) for portability.
 
 ## Security Notes
 
