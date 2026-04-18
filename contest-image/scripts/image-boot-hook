@@ -62,6 +62,11 @@ function unmount_live_disks() {
     sudo umount /run/live/rootfs/filesystem.squashfs
 }
 
+function power_off_drives() {
+    echo 1 | sudo tee /sys/block/sd*/device/delete || true
+    echo 1 | sudo tee /sys/block/devices/nvme*/device/device/remove || true
+}
+
 # Patch some breaks that happen when we aggressively remove some software.
 function fix_breaks() {
     # Replace a Perl script with a link.
@@ -87,6 +92,9 @@ function main() {
 
     # Unmount Live Disks
     unmount_live_disks
+
+    # Power-Off Extra Drives
+    power_off_drives
 
     # Fix Breaks
     fix_breaks
