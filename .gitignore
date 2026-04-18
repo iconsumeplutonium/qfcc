@@ -22,9 +22,11 @@ test/
 .secrets
 
 # Build
-/bin/
-/build/
-/dist/
+bin/
+build/
+dist/
 *.egg-info
 /html/
 /.mypy_*/
+
+/practice/

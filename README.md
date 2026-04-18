@@ -21,6 +21,7 @@ Specific events may vary their rules.
 
 **Quick Links:**
  - [Contest Overview](#contest-overview)
+   - [Practice Problems](#practice-problems)
  - [Contest Procedure](#contest-procedure)
  - [Available Text Editors](contest-image/README.md#text-editors)
  - [Language Support](contest-image/README.md#language-support)
@@ -53,6 +54,23 @@ This competition differs from more traditional competitions in the following way
      In this contest, execution time is not considered.
  - **Better Feedback** --
      In this contest you will get a full copy of your output, instead of just information on whether or not it passed.
+
+### Practice Problems
+
+You can always practice "quality first" programming anytime you program.
+Just focus on the correctness of your code, see if you can use your memory over your autocomplete, and carefully consider your compilation/runtime errors.
+
+If you want to practice problems that are more specific to this contest,
+we have at least one test problem in the [judging-image/test-problems](./judging-image/test-problems) directory.
+Each problem should have a `spec.md`, which would be given to a contestant in a real competition.
+You can also use the scripts from the judging directory to check your submission
+(see [judging-image/README.md](./judging-image/README.md)).
+
+For example, to test the `echo` test problem, you may do:
+ - Read [the problem specification](./judging-image/test-problems/echo/spec.md).
+ - Make a `practice` directory: `mkdir practice`.
+ - Create a submission in `practice/solution.c` (or whatever language you want to use).
+ - Check your submission with: `./judging-image/scripts/run-docker-judge.sh practice judging-image/test-problems/echo/oracle`
 
 ## Contest Procedure
 
