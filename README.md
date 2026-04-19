@@ -122,6 +122,7 @@ Below is the general outline for how a contestant takes part in a competition.
        - Continue to step 8.
      - Else, judges will copy the output of your run onto the same USB stick and place it in the output queue.
        - Retrieve your USB and go to step 5.
+       - If you solution takes too long to run, a judge may kill it early.
 
 8 -- Wait for Final Rankings
 

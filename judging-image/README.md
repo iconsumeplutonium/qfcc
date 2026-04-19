@@ -65,6 +65,7 @@ Definitions:
  - Record Contestant and Attempt Time
  - Plug in USB and Mount
  - Run Judging Script
+   - Submissions that run too long may be killed early. Ensure that you run long enough to allow for mildly inefficient solutions.
  - If successful:
    - Then, record score and keep USB.
    - Otherwise, send back USB.
@@ -84,7 +85,7 @@ booting contest-ready machines and transferring submissions from the contestants
 Prepare a few USBs that can boot the [contest machine image](../contest-image).
 Once booted, the USB can be removed from the machine, so you don't need too many of these.
 
-#### Submission Transder USBs
+#### Submission Transfer USBs
 
 Each contestant should have a USB drive that they can use to submit attempts.
 Each USB should be numbered, dated, and signed by a judge to ensure there is no funny business.
