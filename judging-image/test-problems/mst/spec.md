@@ -39,57 +39,65 @@ You can see that the base graph (on the top) has two possible MSTs (on the botto
 
 ![Minimum Spanning Tree Example](images/mst-example.png)
 
+We can refer to the sum of all edge weights in an MST the MST's "cost" or "weight".
+
 ## Details
 
 Your program should:
  - Read in the graph on stdin.
    - See the [Input Format section](#input-format) for details.
- - Compute an MST for the given undirected graph.
- - Output the summed weight of all edges participating in the MST.
-
-# TEST
-Allow multigraph?
+ - Compute a Minimum Spanning Tree (MST) for the given undirected graph.
+ - Output a single line containing the cost of the MST (the summed weight of all edges participating in the MST).
 
 ### Input Format
 
 The graph will be provided as a series of edges,
-each edge on its own line.
+with each edge on its own line.
+Lines may contain starting or trailing whitespace, that whitespace should be ignored.
 Ignore any lines that are empty or include only whitespace.
+An EOF (end of file), will signal that there are no more edges to read.
 
 Each line containing an edge will have three values (in order) separated by a tab character (`\t`):
  - A node identifier.
- - The edge weight.
+ - An edge weight.
  - A node identifier.
 
 For example, the line `A\t10\tB` indicates that node A is connected to node B via an edge of weight 10.
 
-Lines may contain starting or trailing whitespace, which should be ignored.
-
-An EOF (end of file), will signal that there are no more edges to read.
-
 ## Clarifications
 
- - Node IDs will be uppercase alphabetic (US English) letters.
-   - These characters fall in the range of ASCII characters from 65 (`A`) to 90 (`Z`) (inclusive).
-   - This matches the regular expression: `[A-Z]+`.
- - Edges weights will be a positive integer represented with only digits.
-   - These characters fall in the range of ASCII characters from 48 (`0`) to 57 (`9`) (inclusive).
-   - This matches the regular expression: `[0-9]+` or `\d+`.
- - Edges will connect exactly two nodes.
- - The output cost should follow the same format as edge weights (i.e., positive integer).
- - No partial edges will be supplied.
-   - A non-empty line will always have a full edge on it.
- - A graph will be limited to at most:
-   - 128 Nodes
-   - 1024 Edges
- - The ID of a node will have a length between 1 and 16 letters (inclusive).
- - The weight of an edge will be between 1 and 1024 (inclusive).
- - A "line" is a string terminated with a newline.
-   - The final line of input may  be terminated by an EOF (End-of-File).
- - Only ASCII characters will be sent on stdin.
-   - Treating input as ASCII or UTF-8 strings should result in the same output.
- - "Whitespace" will be considered any ASCII whitespace (see the table below).
- - A "non-empty" string is a string that contains any character and does not include any terminating null byte.
+ - Input
+   - Lines & Whitespace
+     - A "line" is a string terminated with a newline character.
+       - The final line of input may  be terminated by an EOF (End-of-File).
+       - Carriage returns are not recognized as terminating characters in this contest,
+         i.e., this contest uses POSIX-style (not Windows-style) line endings.
+     - Only ASCII characters will be sent on stdin.
+       - Treating input as ASCII or UTF-8 strings should result in the same output.
+     - "Whitespace" will be considered any ASCII whitespace (see the table below).
+     - A "non-empty" string is a string that contains any character and does not include any terminating null byte.
+     - A non-empty line will always have a full edge on it.
+   - Nodes
+     - Node IDs will be uppercase alphabetic (US English) letters.
+       - These characters fall in the range of ASCII characters from 65 (`A`) to 90 (`Z`) (inclusive).
+     - Node IDs will match the regular expression: `[A-Z]+`.
+     - Node IDs will have a length between 1 and 16 letters (inclusive).
+   - Edges
+     - Edges weights will be a positive integer represented with only digits.
+       - These characters fall in the range of ASCII characters from 48 (`0`) to 57 (`9`) (inclusive).
+     - Edge weights (as text) will match the regular expression: `[0-9]+`.
+     - The weight of an edge will be between 1 and 1024 (inclusive).
+     - No partial edges will be supplied.
+ - Output
+   - The output cost should follow the same format as edge weights (i.e., positive integer).
+   - The output should only consist of a single line (which (by definition) must end with a newline character).
+ - Graphs
+   - Edges will connect exactly two nodes.
+   - A graph will be limited to at most:
+     - 128 Nodes
+     - 1024 Edges
+   - Two nodes may have more than one edge connecting them.
+   - Graphs will always contain at least one edge.
 
 ### ASCII Whitespace
 
@@ -109,4 +117,4 @@ It may seem like some things are overly specific and may make you think:
 "Why would they be so specific if there was not some trick here?".
 But, this is just the nature of this contest.
 This document may be all you get, so it has to be very specific.
-The nature of this contest is writing good code, not being tricked.
+The nature of this contest is writing good code, not avoiding traps.
