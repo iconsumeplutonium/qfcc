@@ -1,9 +1,10 @@
 #!/bin/bash
 
 readonly THIS_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd | xargs realpath)"
-readonly BASE_DIR="${THIS_DIR}/.."
+readonly JUDGE_DIR="${THIS_DIR}/.."
+readonly BASE_DIR="${THIS_DIR}/../.."
 readonly DOCKER_JUDGE_SCRIPT="${THIS_DIR}/run-docker-judge.sh"
-readonly TEST_PROBLEMS_DIR="${BASE_DIR}/test-problems"
+readonly TEST_PROBLEMS_DIR="${BASE_DIR}/sample-problems"
 
 readonly TEMP_DIR='/tmp/qfcc-docker-testing'
 readonly TEST_COPY_DIR="${TEMP_DIR}/problems"
@@ -19,7 +20,7 @@ function main() {
 
     trap exit SIGINT
 
-    cd "${BASE_DIR}"
+    cd "${JUDGE_DIR}"
 
     rm -rf "${TEMP_DIR}"
     mkdir -p "${TEMP_DIR}"

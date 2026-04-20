@@ -1,9 +1,9 @@
 #!/bin/bash
 
 readonly THIS_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd | xargs realpath)"
-readonly BASE_DIR="${THIS_DIR}/.."
+readonly BASE_DIR="${THIS_DIR}/../.."
 readonly JUDGE_SCRIPT="${THIS_DIR}/judge-submission.sh"
-readonly TEST_PROBLEMS_DIR="${BASE_DIR}/test-problems"
+readonly TEST_PROBLEMS_DIR="${BASE_DIR}/sample-problems"
 
 readonly TESTING_DIR='/tmp/qfcc-testing'
 readonly ACTUAL_OUTPUT_PATH="${TESTING_DIR}/output/output.txt"
@@ -12,10 +12,12 @@ readonly OUTPUT_DIFF_PATH="${TESTING_DIR}/output.diff"
 function main() {
     if [[ $# -ne 0 ]]; then
         echo "USAGE: $0"
-        exit 1
+        exit 101
     fi
 
     trap exit SIGINT
+
+    cd "${BASE_DIR}"
 
     local error_count=0
 
