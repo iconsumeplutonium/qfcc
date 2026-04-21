@@ -1,5 +1,17 @@
 # Minimum Spanning Tree (MST)
 
+This file contains the problem specification.
+Be sure to also reference these files on your contest desktop:
+
+ - `README.md` -- Contains information about this contest and the contest procedure.
+   - Note that links in these files will be off, since they were copied from the contest repository.
+ - `SYSTEM-INFO.md` -- Contains the information about the contest image (the system you are using).
+   - Be sure to especially consult the "Language Support" section to see what you should name your file.
+ - `HINTS.md` -- Contains general hints for this contest.
+
+To make a submission attempt, copy your file (with the correct filename) to your provided USB drive.
+Make sure it is the only thing in the drive, and put it in the judging queue.
+
 ## Overview
 
 You will be building a program that reads in an undirected graph and outputs the cost of a Minimum Spanning Tree (MST) over that graph.
@@ -13,7 +25,7 @@ Any information provided here is not necessary to solving this problem.
 
 A graph is a structure that contains objects called **nodes** (or vertices) connected by objects called **edges**.
 Nodes often have some id or data associated with it, and edges often have a weight (a number associated with the cost to use/traverse this edge).
-For example, we may represent various location on a school campus as nodes in a graph, and edges as the average time it takes to walk between those two location.
+For example, we may represent various locations on a school campus as nodes in a graph, and edges as the average time it takes to walk between those two locations.
 
 ![Graph Example - Campus](images/graph-example-campus.png)
 
@@ -31,7 +43,7 @@ A "Minimum Spanning Tree" (MST) a spanning tree with the lowest possible sum of 
 You can think of it as one of the lowest cost paths through a graph.
 
 Consider the above example graph that represents locations on a school campus.
-If you had to visit all three location and you could be dropped off at one of them,
+If you had to visit all three locations and you could be dropped off at one of them,
 then an MST would tell you how to get to each location with the shortest time spent walking.
 
 The example below (provided by [Wikimedia](https://en.wikipedia.org/wiki/File:Multiple_minimum_spanning_trees.svg)),
