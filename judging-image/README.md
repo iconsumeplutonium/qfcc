@@ -57,6 +57,29 @@ Definitions:
  - `oracle/input` -- Where the input (stdin) for test cases is located.
  - `oracle/output` -- Where the output (stdout) for test cases is located, file names should match `oracle/input`.
 
+### Record and Judge Script
+
+The [scripts/record-and-judge.sh](scripts/record-and-judge.sh) packages most of the operations you will need to do during an actual competition:
+ - Mount USB
+ - Copy Submission to Unique (Persistent) Place
+ - Judge
+ - Copy Output to USB
+ - Fix Permissions
+ - Unmount USB
+
+It is **strongly** recommended that you read this script before using it,
+as it does require root access.
+
+The basic usage is:
+```sh
+sudo scripts/record-and-judge.sh <out dir> <oracle dir> <device path> <contestant name/id>
+```
+
+So something like:
+```sh
+sudo scripts/record-and-judge.sh out ../sample-problems/echo/oracle /dev/sdX1 sslug@ucsc.edu
+```
+
 ## Judging Procedure
 
  - Prep your machine.
