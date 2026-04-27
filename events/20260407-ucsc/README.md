@@ -103,3 +103,15 @@ For the love of programming and to improve your skills!
  - First: $50
  - Second: $25
  - Third: $15
+
+## Update: Results
+
+Congratulations to our winners!
+
+| Name    | Number of Compiles / Runs | Time (mins) |
+|---------|---------------------------|-------------|
+| Liam    | 2                         | 58          |
+| Nishant | 4                         | 53          |
+| Umair   | 8                         | 93          |
+
+![winners](winners.jpg)
