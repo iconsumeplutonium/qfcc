@@ -70,6 +70,24 @@ while (true) {
 }
 ```
 
+### Javascript
+
+```js
+const readline = require('readline');
+
+const reader = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
+});
+
+reader.on('line', function(line) {
+});
+
+reader.once('close', function() {
+});
+```
+
 ### Python
 
 ```python

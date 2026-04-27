@@ -6,7 +6,7 @@ readonly ORACLE_DIRNAME='oracle'
 
 readonly SUBMISSION_BASENAME='solution'
 
-readonly ALLOWED_EXTENSIONS=".c .cc .cs .java .py .rb"
+readonly ALLOWED_EXTENSIONS=".c .cc .cs .java .js .py .rb"
 
 readonly TEMP_DIR='/tmp/qfcc'
 readonly OUTPUT_DIFF_PATH="${TEMP_DIR}/output.diff"
@@ -168,6 +168,8 @@ function run_submission() {
         fi
 
         java -cp "${CLASSPATH_DIR}" "${submission_basename}" < "${input_path}" &> "${output_path}"
+    elif [[ "${submission_extension}" == '.js' ]] ; then
+        node "${submission_path}" < "${input_path}" &> "${output_path}"
     elif [[ "${submission_extension}" == '.py' ]] ; then
         python3 "${submission_path}" < "${input_path}" &> "${output_path}"
     elif [[ "${submission_extension}" == '.rb' ]] ; then

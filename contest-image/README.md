@@ -18,14 +18,15 @@ tools to create a custom image.
 All submissions should be contained in a single file with the `solution` basename.
 The extension that should be used as well as how the solution will be run is in the following table:
 
-| Language | Version              | Extension | Compilation                | Invocation             |
-|----------|----------------------|-----------|----------------------------|------------------------|
-| C        | gcc 12.2.0           | `.c`      | `gcc solution.c`           | `./a.out`              |
-| C#       | dotnet 10.0.203      | `.cs`     | `dotnet build solution.cs` | `./bin/debug/solution` |
-| C++      | g++ 12.2.0           | `.cc`     | `g++ solution.cc`          | `./a.out`              |
-| Java     | OpenJDK 17.0.18      | `.java`   | `javac solution.java`      | `java solution`        |
-| Python   | CPython 3.11.2       | `.py`     |                            | `python3 solution.py`  |
-| Ruby     | ruby (YARV) 3.1.2p20 | `.rb`     |                            | `ruby solution.rb`     |
+| Language   | Version              | Extension | Compilation                | Invocation             |
+|------------|----------------------|-----------|----------------------------|------------------------|
+| C          | gcc 12.2.0           | `.c`      | `gcc solution.c`           | `./a.out`              |
+| C#         | dotnet 10.0.203      | `.cs`     | `dotnet build solution.cs` | `./bin/debug/solution` |
+| C++        | g++ 12.2.0           | `.cc`     | `g++ solution.cc`          | `./a.out`              |
+| Java       | OpenJDK 17.0.18      | `.java`   | `javac solution.java`      | `java solution`        |
+| Javascript | node v18.20.4        | `.js`     |                            | `node solution.js`     |
+| Python     | CPython 3.11.2       | `.py`     |                            | `python3 solution.py`  |
+| Ruby       | ruby (YARV) 3.1.2p20 | `.rb`     |                            | `ruby solution.rb`     |
 
 If you want to use a language not listed here,
 be sure to contact the contest hosts well before the contest.
