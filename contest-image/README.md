@@ -23,6 +23,7 @@ The extension that should be used as well as how the solution will be run is in 
 | C          | gcc 12.2.0           | `.c`      | `gcc solution.c`           | `./a.out`              |
 | C#         | dotnet 10.0.203      | `.cs`     | `dotnet build solution.cs` | `./bin/debug/solution` |
 | C++        | g++ 12.2.0           | `.cc`     | `g++ solution.cc`          | `./a.out`              |
+| Go         | go 1.19.8            | `.go`     | `go build solution.go`     | `./solution`           |
 | Java       | OpenJDK 17.0.18      | `.java`   | `javac solution.java`      | `java solution`        |
 | Javascript | node v18.20.4        | `.js`     |                            | `node solution.js`     |
 | Perl       | GNU Perl v5.36.0     | `.pl`     |                            | `perl solution.py`     |

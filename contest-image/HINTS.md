@@ -48,6 +48,24 @@ for (std::string line; std::getline(std::cin, line); ) {
 }
 ```
 
+### Go
+
+```go
+package main
+
+import (
+	"bufio"
+	"os"
+)
+
+func main() {
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		line := scanner.Text()
+	}
+}
+```
+
 ### Java
 
 ```java

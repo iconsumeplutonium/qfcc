@@ -6,7 +6,7 @@ readonly ORACLE_DIRNAME='oracle'
 
 readonly SUBMISSION_BASENAME='solution'
 
-readonly ALLOWED_EXTENSIONS=".c .cc .cs .java .js .php .pl .py .rb .rs"
+readonly ALLOWED_EXTENSIONS=".c .cc .cs .go .java .js .php .pl .py .rb .rs"
 
 readonly TEMP_DIR='/tmp/qfcc'
 readonly OUTPUT_DIFF_PATH="${TEMP_DIR}/output.diff"
@@ -158,13 +158,21 @@ function run_submission() {
         fi
 
         ./bin/debug/solution < "${input_path}" &> "${output_path}"
+    elif [[ "${submission_extension}" == '.go' ]] ; then
+        go build "${submission_path}" &> "${compile_output_path}"
+        if [[ $? -ne 0 ]] ; then
+            echo "Go compile failed."
+            exit 112
+        fi
+
+        "./${SUBMISSION_BASENAME}" < "${input_path}" &> "${output_path}"
     elif [[ "${submission_extension}" == '.java' ]] ; then
         mkdir -p "${CLASSPATH_DIR}"
 
         javac -d "${CLASSPATH_DIR}" "${submission_path}" &> "${compile_output_path}"
         if [[ $? -ne 0 ]] ; then
             echo "Java compile failed."
-            exit 112
+            exit 113
         fi
 
         java -cp "${CLASSPATH_DIR}" "${submission_basename}" < "${input_path}" &> "${output_path}"
@@ -182,7 +190,7 @@ function run_submission() {
         rustc "${submission_path}" &> "${compile_output_path}"
         if [[ $? -ne 0 ]] ; then
             echo "Rust compile failed."
-            exit 113
+            exit 114
         fi
 
         "./${SUBMISSION_BASENAME}" < "${input_path}" &> "${output_path}"

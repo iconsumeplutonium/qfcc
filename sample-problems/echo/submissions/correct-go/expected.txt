@@ -1,0 +1,13 @@
+Running test case: '001-single-line'.
+Test case '001-single-line' passed.
+
+Running test case: '002-multiple-lines'.
+Test case '002-multiple-lines' passed.
+
+Running test case: '003-empty-lines'.
+Test case '003-empty-lines' passed.
+
+Running test case: '004-no-input'.
+Test case '004-no-input' passed.
+
+Passed all test cases!
